@@ -1,0 +1,133 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@200;400;500;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: hsl(30, 16%, 50%);
+  --text-color: #fff;
+  --text-color-black: hsl(30, 8%, 15%);
+  --body-color: hsl(30, 100%, 98%)
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --h3-font-size: 1rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+}
+
+  /* Reponsive typography */
+  @media screen and (min-width: 1024px) {
+    :root {
+        --h3-font-size: 1.125rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+  }
+  
+/*========== Base ==========*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: var(--body-color);
+    background-color: var(--body-color);
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/*========== Gallery ==========*/
+.gallery{
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.gallery__card{
+    position: relative;
+    width: 280px;
+    height: 268px;
+    border-radius: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.gallery__img,
+.gallery__card::after,
+.gallery__data{
+    position: absolute;
+}
+
+.gallery__img{
+    inset: 0;
+    margin: auto;
+    transition: transform  .3s;
+}
+
+.gallery__card::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+                 hsla(0, 0%, 100%, 0) 32%,
+                 hsla(0, 0%, 0%, .3) 100%);
+    top: 0;
+    z-index: 1;
+}
+
+.gallery__data{
+    bottom: 1.5rem;
+    left: 1.75rem;
+    z-index: 10;
+}
+
+.gallery__title,
+.gallery__subtitle{
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.gallery__title{
+    font-size: var(--h3-font-size);
+}
+
+.gallery__subtitle{
+    font-size: var(--smaller-font-size);
+}
+
+.gallery__overflow{
+    position: relative;
+}
+
+.gallery__thumbnail{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    transition: transform  .3s;
+}
+
+.gallery__thumbnail-img{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+
+/* Swiper class */
+.gallery-cards,
+.gallery-thumbs{
+    width: 260px;
+    
+}
